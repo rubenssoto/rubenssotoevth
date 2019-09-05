@@ -3,7 +3,9 @@ from classes import *
 
 wait = 20
 
-arquivo = File('cnpjs.txt')
+apresentacao.entrada()
+arquivo = File(input('Informe o caminho do arquivo que contém os cnpjs:'))
+arquivoresultado = File(input('Informe onde deseja salvar os resultados:'))
 resultadofinal = {}
 for i in arquivo.learquivo():
     cnpjresultado = Cnpj(i)
@@ -16,7 +18,6 @@ for i in arquivo.learquivo():
     time.sleep(wait)
 
 #print(resultadofinal)
-arquivoresultado = File('resultado.json')
 arquivoresultado.gravaarquivo(resultadofinal)
 
 

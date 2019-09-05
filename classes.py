@@ -16,7 +16,7 @@ class File():
             return lines
 
     def gravaarquivo(self, conteudo):
-        with open(self.filename, 'w') as writefile:
+        with open(self.filename, 'w+') as writefile:
             json.dump(conteudo, writefile)
 
 class Cnpj():
@@ -29,3 +29,13 @@ class Cnpj():
         result = requests.get(receitaurl + limpanumero(self.cnpjnumber)).json()
         cnpjcode = result['atividade_principal'][0]['code']
         return limpanumero(cnpjcode)
+
+class apresentacao():
+    def entrada():
+        print('-----------------------------------------------------------')
+        print('-----------------------------------------------------------')
+        print('----------------BEM VINDO AO CONSULTA CNPJ-----------------')
+        print('-----------------------------------------------------------')
+        print('-----------------------------------------------------------')
+        print('Esse programa irá consultar os códigos CNAE de cada CNPJ \ninformado na Receita Federal Brasileira')
+        print('\n')
